@@ -111,8 +111,6 @@ public class PrimMST {
 
         return mstEdges;
     }
-
-
 }
 
 class Edge {
