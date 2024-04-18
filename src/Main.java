@@ -4,8 +4,9 @@ public class Main {
     }
 
     minHeap testHeap = new minHeap(10);
-    Element e1 = new Element(1, 3);
 
     //testHeap
 
+
 }
+

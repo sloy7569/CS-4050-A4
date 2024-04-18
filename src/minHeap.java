@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 //Creating a minHeap using an array and the Element class (MIGHT NEED TO BE CHANGED)
 public class minHeap {
     private Element[] Heap;
@@ -10,7 +16,7 @@ public class minHeap {
         this.size = 0;
 
         Heap = new Element[userSize + 1];
-        Heap[0] = new Element(0,-10000000) ;
+        Heap[0] = new Element(0,-10000000, -1000000) ;
     }
 
     private int leftChildIndex(int index) {
@@ -27,13 +33,17 @@ public class minHeap {
     }
 
     //return the key of the min
-    public int min_key() {
+    public double min_key() {
         return Heap[1].getKey();
     }
 
     //return the id of the min
     public int min_id() {
         return Heap[1].getId();
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
     }
 
     //swap two indexes
@@ -73,7 +83,7 @@ public class minHeap {
     }
 
     //check if a key is in the heap, and if so, return it
-    public int key(int id) {
+    public double key(int id) {
         for(int i = 1; i < userSize; i++){
             if(Heap[i].getId() == id){
                 return Heap[i].getKey();
@@ -146,40 +156,40 @@ public class minHeap {
     public static void main(String[] arg)
     {
 
-        /*
+
         System.out.println("The Min Heap is ");
 
         minHeap test = new minHeap(15);
 
-        Element e1 = new Element(1, 30);
-        Element e2 = new Element(2, 70);
-        Element e3 = new Element(3, 10);
-        Element e4 = new Element(4, 20);
-        Element e5 = new Element(5, 43);
-        Element e6 = new Element(6, 55);
-        Element e7 = new Element(7, 17);
-        Element e8 = new Element(8, 90);
-        Element e9 = new Element(9, 66);
-        Element e10 = new Element(10, 21);
+//        Element e1 = new Element(1, 30);
+//        Element e2 = new Element(2, 70);
+//        Element e3 = new Element(3, 10);
+//        Element e4 = new Element(4, 20);
+//        Element e5 = new Element(5, 43);
+//        Element e6 = new Element(6, 55);
+//        Element e7 = new Element(7, 17);
+//        Element e8 = new Element(8, 90);
+//        Element e9 = new Element(9, 66);
+//        Element e10 = new Element(10, 21);
+//
+//
+//        test.insert(e1);
+//        test.insert(e2);
+//        test.insert(e3);
+//        test.insert(e4);
+//        test.insert(e5);
+//        test.insert(e6);
+//        test.insert(e7);
+//        test.insert(e8);
+//        test.insert(e9);
+//        test.insert(e10);
+//
+//        test.print();
+//
+//        test.deleteMin();
+//
+//        test.print();
 
-
-        test.insert(e1);
-        test.insert(e2);
-        test.insert(e3);
-        test.insert(e4);
-        test.insert(e5);
-        test.insert(e6);
-        test.insert(e7);
-        test.insert(e8);
-        test.insert(e9);
-        test.insert(e10);
-
-        test.print();
-
-        test.deleteMin();
-
-        test.print();
-        */
 
     }
 
